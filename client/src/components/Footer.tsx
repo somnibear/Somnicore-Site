@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import logoUrl from "@assets/SomnicoreLogo_1761928231857.jpeg";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -18,9 +19,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">S</span>
-              </div>
+              <img 
+                src={logoUrl} 
+                alt="Somnicore Logo" 
+                className="h-8 w-auto object-contain"
+              />
               <span className="font-display font-semibold text-xl">Somnicore</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">

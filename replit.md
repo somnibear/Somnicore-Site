@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a marketing website for Somnicore LLC, a sleep wellness technology company developing mobile applications and wearable devices for sleep tracking. The site showcases their products, company information, and provides contact forms for potential customers and partners. Built as a full-stack web application using React on the frontend and Express on the backend, with a focus on professional presentation and trust-building for a health technology startup.
+This is a marketing website for Somnicore LLC, a sleep wellness technology company developing mobile applications and wearable devices for sleep tracking. The site showcases their products, company information, and provides contact forms for potential customers and partners. Built as a static React application optimized for GitHub Pages deployment, with a focus on professional presentation and trust-building for a health technology startup. The site is designed to support developer account applications with Apple and Google.
 
 ## User Preferences
 
@@ -14,7 +14,8 @@ Preferred communication style: Simple, everyday language.
 
 **Framework & Routing**
 - React with TypeScript for component-based UI development
-- Wouter for client-side routing (lightweight alternative to React Router)
+- Wouter with hash-based routing for GitHub Pages compatibility
+- Hash URLs (/#/about, /#/products) work seamlessly with static hosting
 - Vite as the build tool and development server
 
 **UI Component System**
@@ -43,40 +44,29 @@ Preferred communication style: Simple, everyday language.
 - Privacy & Terms: Legal documentation pages
 - 404: Custom not-found page
 
-### Backend Architecture
+### Deployment Architecture
 
-**Server Framework**
-- Express.js for HTTP server and API routing
-- TypeScript for type safety across the stack
-- Custom middleware for request logging and JSON parsing with raw body preservation
+**Static Site Configuration**
+- GitHub Pages optimized with hash-based routing
+- Automated deployment via GitHub Actions workflow
+- Conditional base path configuration for user/org vs project pages
+- `.nojekyll` file prevents Jekyll processing
 
-**Development Setup**
-- Vite middleware integration for HMR in development
-- SSR-ready architecture with template rendering capability
-- Separate build processes for client and server code
+**Development Environment**
+- Express.js server for local development (not used in production)
+- Vite dev server with HMR
+- Development setup in `server/` directory (not deployed)
 
-**Storage Interface**
-- Abstracted storage interface (IStorage) for database operations
-- In-memory storage implementation (MemStorage) as default
-- User CRUD operations defined in storage contract
-- Designed for easy migration to persistent database (Drizzle ORM ready)
+**Build Process**
+- Production build creates static files in `dist/public`
+- Automatic base path detection in CI/CD workflow
+- All assets bundled and optimized by Vite
+- No backend server required in production
 
-### Data Storage Solutions
-
-**Database Configuration**
-- Drizzle ORM configured for PostgreSQL (via Neon serverless driver)
-- Schema definition using Drizzle's type-safe API
-- Migration support with drizzle-kit
-- Zod integration for runtime schema validation
-
-**Current Schema**
-- Users table with UUID primary keys, username, and password fields
-- Schema exports typed Insert/Select models for type safety
-
-**Note on Database**
-- Configuration present but database not actively used in current implementation
-- In-memory storage currently handles any data persistence needs
-- Infrastructure ready for database integration when needed
+**Deployment Options**
+1. **Automated** (recommended): GitHub Actions workflow deploys on push to main
+2. **Manual**: Build locally and push to gh-pages branch
+3. See `DEPLOYMENT.md` for detailed instructions
 
 ### External Dependencies
 

@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoUrl from "@assets/SomnicoreLogo_1761928231857.jpeg";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -25,9 +26,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" data-testid="link-home">
             <div className="flex items-center gap-2 hover-elevate active-elevate-2 px-3 py-2 rounded-md transition-colors">
-              <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">S</span>
-              </div>
+              <img 
+                src={logoUrl} 
+                alt="Somnicore Logo" 
+                className="h-8 w-auto object-contain"
+              />
               <span className="font-display font-semibold text-xl">Somnicore</span>
             </div>
           </Link>
