@@ -1,9 +1,69 @@
-body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.6; }
-header nav a { margin-left: 1rem; color: white; text-decoration: none; }
-header { display: flex; justify-content: space-between; align-items: center;  background: #0a1a2f; color: white; }
-.hero { text-align: center; padding: 6rem 2rem; background: linear-gradient(135deg, #0a1a2f, #1f3c6d); color: white; }
-.hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-.cta { display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #ffcc00; color: #0a1a2f; font-weight: bold; border-radius: 4px; text-decoration: none; }
-section { padding: 3rem 2rem; max-width: 900px; margin: auto; }
-.product { margin-bottom: 2rem; }
-footer { text-align: center; padding: 1rem; background: #f4f4f4; font-size: 0.9rem; }
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a1a2f;
+  color: white;
+  padding: 0.5rem 1.25rem;   /* smaller vertical padding = shorter header */
+}
+
+header .logo {
+  max-height: 40px;          /* keeps logo from forcing header taller */
+}
+
+header nav a {
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;         /* slightly smaller text keeps nav compact */
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;         /* reduced from 6rem for less vertical bulk */
+  background: linear-gradient(135deg, #0a1a2f, #1f3c6d);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;          /* slightly smaller headline */
+  margin-bottom: 0.5rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #ffcc00;
+  color: #0a1a2f;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* Sections */
+section {
+  padding: 2.5rem 2rem;       /* slightly reduced padding */
+  max-width: 900px;
+  margin: auto;
+}
+
+.product {
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f4f4f4;
+  font-size: 0.9rem;
+}
